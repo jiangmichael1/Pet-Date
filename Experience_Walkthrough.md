@@ -8,6 +8,7 @@
     - Pet Dates (redirects to sign up, displays: "We can't show the pets you matched with if you don't have an account!" )
     - Contact Us 
     - Log In
+ - Add additional condition check for if someone is logging in as an adoption center
 
 *** 
  
@@ -47,6 +48,9 @@
     - The user can press 'left' or 'right' keys to like or dislike the photo
     - There will be an animation that slides the image to the left or right side. 
 
- 
+ ### Adoption Center View
+ ### Clicking On Contact Us/My Messages (Adding in Messenger Feature)
+ ### Utilizing API for Back-end Data (Adding in API)
+   - Figure out how to make curl requests
 
 

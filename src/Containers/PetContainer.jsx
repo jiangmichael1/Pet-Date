@@ -23,7 +23,7 @@ export default class PetContainer extends React.Component{
         
         return(
             <div>
-                <h1 > PetContainer: I display the pet Tinder functionality!</h1>
+                <h1 > Find Your Pet Date!</h1>
                 <div>
                     {this.petFilter(this.props.pets, this.state.start).map(pet => 
                         <Pet 

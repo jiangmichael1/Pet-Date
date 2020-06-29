@@ -37,6 +37,10 @@ class Pet extends React.Component{
                 like: opinion
             })
         })
+        .then(r => r.json())
+        .then(pet => {
+            this.props.addLikedPet(pet)
+        })
     }
 
     handleClick = (e) => {
@@ -58,7 +62,7 @@ class Pet extends React.Component{
                 <p>{age}</p>
                 <p>{gender}</p>
                 <p>{breed}</p>
-                <img src={profile_pic} alt={name} />
+                <img style={{height:500+'px', width:500+'px'} }src={profile_pic} alt={name} />
                 <button onClick={this.handleClick}>Like</button>
                 <button onClick={this.handleClick}>Dislike</button>
             </div>
