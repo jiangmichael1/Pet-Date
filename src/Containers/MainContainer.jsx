@@ -13,7 +13,6 @@ export default class MainContainer extends React.Component{
         pets:[],
         user: {},
         likedPets: [], //join table user and pets
-        livePetData: []
     }
 
     fetchAllPets = () => {
@@ -49,21 +48,6 @@ export default class MainContainer extends React.Component{
                     }
                 })
             })
-    }
-
-    fetchLivePetData = () => {
-        fetch(`https://api.petfinder.com/v2/animals?type=dog&page=2`,{
-            method: "GET",
-            headers: {
-                "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJOZUY5dlpoZTVZQWpSSVkzWERFUUNRUk5EeG1EUnBiVldzWlA3S2s2MzVONFhEWXNHSCIsImp0aSI6Ijg3ZWYyYWE4NTNmNzBmMjNhZWU5ZGUzNTM5MDY4MTc1N2IwZDI2MjcyZTdmMzQ3NjE5NTExZDVhZTg5NjcxMzkwYjhhZWFlZWNhNWQ0MTNlIiwiaWF0IjoxNTkzNDQzNTMxLCJuYmYiOjE1OTM0NDM1MzEsImV4cCI6MTU5MzQ0NzEzMSwic3ViIjoiIiwic2NvcGVzIjpbXX0.J3GSBoGW7TGfTuy9hUMed5Fpy-ewjAPtd98IiHDe5HgcWnWUEefY-Z29sK-OEHO388D_F7kwFFevoyxTmIacyLCKhWzy5zj4CB5JKHKSK2y0BE6RJdZ5mmg1CR4uMj0OGDb6nGRjPmuYnAxZnfJYOFlG20jb1VJaHJuVoEW9fdbSKc2tOznHgqeFIS3R2zmIl3PS0iN3wibg28UrzR0rPhl9tangrYpQ7bJTu8xOHMDWZKCcLL5KhoqHu2DjNrv7lTeMkzDLwMl24Ad5UsJqxrTOfUSsA1hHPHL6xYJjPSp-s-cYcNE2J-mg70uAvKXVN--AicSlcP6IqMGM0UDq9g"
-            }
-        })
-        .then(r => r.json())
-        .then(pets => {
-            this.setState({
-                livePetData: pets
-            })
-        })
     }
 
     setFilteredPets = () => {
