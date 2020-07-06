@@ -1,11 +1,13 @@
 import React from 'react'
 import LikedPetDisplay from '../Components/LikedPetDisplay'
 import SearchBar from '../Components/SearchBar'
+import Pet from '../Components/Pet'
 
 
 class LikedPetDisplayContainer extends React.Component{
     state = {
-        searchTerm: ''
+        searchTerm: '',
+        pet: {}
     }
 
     handleSearchTerm = (searchTerm) => {
@@ -21,24 +23,42 @@ class LikedPetDisplayContainer extends React.Component{
         return likedPets
     }
 
+    setDisplayPet = (pet) => {
+        this.setState({
+            pet: pet
+        })
+    }
+
     render(){
         return ( 
-            <React.Fragment>
+            <div className="likedPetsDisplay">
                 <h1> My Liked Pets</h1>
                 <div className="likedPetsDisplayContainer">
-                    <SearchBar
-                        searchTerm={this.state.searchTerm}
-                        handleSearchTerm={this.handleSearchTerm}
-                           
-                    />
-                    <div>
-                        {this.filteredLikedPets().map(pet => 
-                            <LikedPetDisplay key={pet.id} pet={pet}/>
-                        )}
+                    <div className="likedPetsList">
+                        <SearchBar
+                            searchTerm={this.state.searchTerm}
+                            handleSearchTerm={this.handleSearchTerm} 
+                        />
+                        <div>
+                            {this.filteredLikedPets().map(pet => <LikedPetDisplay 
+                                key={pet.id} 
+                                displayPet={this.setDisplayPet}
+                                pet={pet}
+                            />)}
+                            {/* {this.filteredLikedPets().map(pet => 
+                                <div key={pet.id} className="likedPet">
+                                    <h5>{pet.name}</h5>
+                                </div>
+                            )} */}
+                        </div>
                     </div>
+                    <div>
+                        {<Pet key={this.state.pet.id} pet={this.state.pet} display={"likedPets"} />}
+                    </div>
+                    
                 </div>
                 
-            </React.Fragment>
+            </div>
         )
     }
 }

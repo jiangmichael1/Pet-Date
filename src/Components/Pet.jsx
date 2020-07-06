@@ -8,25 +8,6 @@ const urlHeaders = {
 
 class Pet extends React.Component{
 
-    /* ======HELPERS ======*/
-
-    // addCurrentPetToUsersLikedPets = () => {
-    //     fetch(`${baseUrl}/liked_pets`,{
-    //         method: "POST",
-    //         headers: urlHeaders,
-    //         body: JSON.stringify({
-    //             user_id: 1,
-    //             pet_id: this.props.pet.id,
-    //             like: "neutral"
-    //         })
-    //     })
-    //     .then(r => r.json())
-    //     .then(pet => {
-    //         this.props.addLikedPet(pet)
-    //         console.log(pet)
-    //     })
-    // }
-
     postLikeOrDislike = (opinion) => {
         fetch(`${baseUrl}/liked_pets`,{
             method: "POST",
@@ -53,18 +34,35 @@ class Pet extends React.Component{
     }
      
     render(){
-        const { animal_type, name, age, gender, breed, profile_pic } = this.props.pet
+        const { animal_type, name, age, gender, breed, profile_pic, color, size, coat_length, good_with, care_and_behavior, bio } = this.props.pet
+        
         return(
-            
-            <div>
-                <p>{animal_type}</p>
-                <h5>{name}</h5>
-                <p>{age}</p>
-                <p>{gender}</p>
-                <p>{breed}</p>
-                <img style={{height:500+'px', width:500+'px'} }src={profile_pic} alt={name} />
-                <button onClick={this.handleClick}>Like</button>
-                <button onClick={this.handleClick}>Dislike</button>
+            <div className="petInfoContainer">
+
+                {!this.props.display
+                    ? <button className="likeButton" onClick={this.handleClick}>Dislike</button>    
+                    : null
+                }
+                
+                <div className="petProPicContainer">
+                    <img className="petProPic" src={profile_pic} alt={name} />
+                </div>
+
+                <div className="petInfo">
+                    <h1>{name}</h1> <p>{age} years old {gender} {breed}</p>
+                    <p><b>Bio: </b> {bio}</p>
+                    <p><b>Color(s):</b> {color}</p>
+                    <p><b>Size:</b> {size}</p>
+                    <p><b>Coat Length:</b> {coat_length}</p>
+                    <p><b>Good With:</b> {good_with}</p>
+                    <p><b>Care and Behavior:</b> {care_and_behavior}</p>
+                    
+                </div>
+
+                {!this.props.display
+                    ? <button className="likeButton" onClick={this.handleClick}>Like</button>   
+                    : null
+                } 
             </div>
         )
     }

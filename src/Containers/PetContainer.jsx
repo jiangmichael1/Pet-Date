@@ -22,9 +22,9 @@ export default class PetContainer extends React.Component{
     render(){
         
         return(
-            <div>
-                <h1 > Find Your Pet Date!</h1>
-                <div>
+            <div className="petContainerInfo">
+                <h1> Here are some pets waiting to be adopted near you: </h1>
+                <div className="petContainer">
                     {this.petFilter(this.props.pets, this.state.start).map(pet => 
                         <Pet 
                             key={pet.id} 

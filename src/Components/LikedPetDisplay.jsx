@@ -7,21 +7,22 @@ class LikedPetDisplay extends React.Component{
     }
 
     handleDisplay = (e) => {
-        this.setState(prevState => ({
-            toggleDisplay: !prevState.toggleDisplay
-        }))
+        this.props.displayPet(this.props.pet)
+        // this.setState(prevState => ({
+        //     toggleDisplay: !prevState.toggleDisplay
+        // }))
     }
 
     render(){
         const {animal_type, name, age, gender, breed, profile_pic} = this.props.pet
         return (  
             <div className="likedPet">
-                <h5  onClick={this.handleDisplay}>{name}</h5>
+                <h5 onClick={this.handleDisplay}>{name}</h5>
                 {this.state.toggleDisplay 
                     ?   
                     <div >
                         {animal_type === "cat" ? "Cat" : "Dog"}
-                        <br />
+                        <br/>
                         {name} {gender === "Female" ? "♀" : "♂"} 
                         <br/>
                         Breed: {breed}
@@ -29,9 +30,6 @@ class LikedPetDisplay extends React.Component{
                         Age: {age}
                         <br/>
                         <img style={{height:500+'px', width:500+'px'}} src={profile_pic}/>
-
-                        
-
                     </div>
                     : null
             }
