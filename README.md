@@ -1,3 +1,6 @@
+# Pet Date
+Pet Date was created with the idea of easing the pet adoption process. Many people are turned away from adopting a pet due to the complex nature of adoption. Pet Date uses a like and dislike functionality (much like Tinder) to help you find pets that you might want to adopt. It also utilizes the user's location to help identify pets near them which are up for adoption. Pet Date will ultimately use PetFinder API as well as Google Maps in order to provide a live database of pets up for adoption as well as pinpoint the user's location.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,4 +69,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# pet_date_client
+
