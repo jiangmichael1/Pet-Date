@@ -5,10 +5,10 @@ export default class ACContainer extends React.Component{
     render(){
         return(
             <React.Fragment>
-                <h1>Nearby Adoption Centers:</h1>
-                <div>
+                <h1 className="acGreeting">Nearby Adoption Centers:</h1>
+                
                     {this.props.acs.map(ac => <AC key={ac.id} ac={ac} />)}
-                </div>
+            
                 
             </React.Fragment>
         )

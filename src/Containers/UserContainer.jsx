@@ -4,9 +4,9 @@ import User from '../Components/User'
 export default class UserContainer extends React.Component{
     render(){
         return(
-            <React.Fragment> 
+            <div className="userContainer"> 
                 {<User key={this.props.user.id} user={this.props.user} />}
-            </React.Fragment>
+            </div>
         )
     }
 }

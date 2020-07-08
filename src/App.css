@@ -241,7 +241,7 @@ h3 {
   overflow-y: scroll;
   direction: rtl;
   width: 180px;
-  margin-right: 50px;
+  margin-right: 10px;
 }
 
 .likedPetsInfo{
@@ -270,6 +270,7 @@ h3 {
 }
 
 .petInfo {
+  width: 300px;
   align-self: flex-start;
   background-color: #F1F5E0;
 }
@@ -280,11 +281,37 @@ h3 {
 
 .petProPic {
   background-color: #F1F5E0;
-  height: 400px;
-  width: auto;
+  height: auto;
+  width: 400px;
   border-radius: 20px;
   margin: 15px 50px 15px 15px;
   box-shadow: 5px 10px lightgray;
+}
+
+.redx {
+  background-color: #F1F5E0;
+  opacity: 0.6;
+  height: 150px;
+  width: auto;
+  margin: 20px;
+}
+
+.redx:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.greenCheck {
+  background-color: #F1F5E0;
+  opacity: 0.6;
+  height: 150px;
+  width: auto;
+  margin: 20px;
+}
+
+.greenCheck:hover{
+  opacity: 1;
+  cursor: pointer;
 }
 
 .petProPicContainer{
@@ -298,12 +325,20 @@ h3 {
   border: solid 5px lightgray;
 }
 
+.userContainer {
+  display:flex;
+  justify-content: space-around;
+}
+
 .userInfoContainer {
-  padding: 10px;
+  padding: 20px;
+  width: 400px;
 }
 
 .userInfoContainer h2{
   background-color: #F1F5E0;
+  font-family: 'Righteous', cursive;
+  letter-spacing: .05em; 
 }
 
 .footer {
@@ -316,17 +351,26 @@ h3 {
 }
 
 .acInfo{
-  border: solid 2px;
   border-radius: 25px;
-  margin: 20px;
-  padding: 20px;
+  margin: 20px 50px 50px 50px;
+  padding: 10px;
   width: 400px;
-  height: 350px;
+  height: 300px;
+  box-shadow: 5px 10px lightgray;
+}
+
+.acInfo h2{
+  background-color: #F1F5E0;
+}
+
+.acGreeting {
+  padding: 0 0 10px 50px;
 }
 
 .acLogo {
-  height: auto;
-  width: 300px;
+  height: 100px;
+  width: auto;
+  background-color: #F1F5E0;
 }
 
 .footer a{

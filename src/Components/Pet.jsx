@@ -25,7 +25,7 @@ class Pet extends React.Component{
     }
 
     handleClick = (e) => {
-        if(e.target.textContent === "Like"){
+        if(e.target.className === "greenCheck"){
             this.postLikeOrDislike("Liked")
         }else{
             this.postLikeOrDislike("Disliked")
@@ -40,14 +40,14 @@ class Pet extends React.Component{
             <div className="petInfoContainer">
 
                 {!this.props.display
-                    ? <button className="likeButton" onClick={this.handleClick}>Dislike</button>    
+                    ? <button className="likeButton" onClick={this.handleClick}><img className="redx" src="https://i.ibb.co/9TYTNk2/Red-X.png" alt="red x" /></button>    
                     : null
                 }
                 
                 <div className="petProPicContainer">
                     <img className="petProPic" src={profile_pic} alt={name} />
                 </div>
-
+                
                 <div className="petInfo">
                     <h1>{name}</h1> <p>{age} years old {gender} {breed}</p>
                     <p><b>Bio: </b> {bio}</p>
@@ -56,11 +56,10 @@ class Pet extends React.Component{
                     <p><b>Coat Length:</b> {coat_length}</p>
                     <p><b>Good With:</b> {good_with}</p>
                     <p><b>Care and Behavior:</b> {care_and_behavior}</p>
-                    
                 </div>
-
+                  
                 {!this.props.display
-                    ? <button className="likeButton" onClick={this.handleClick}>Like</button>   
+                    ? <button className="likeButton" onClick={this.handleClick}><img className="greenCheck" src="https://i.ibb.co/k59B2vc/Green-check.png" alt="green check" /></button>   
                     : null
                 } 
             </div>
